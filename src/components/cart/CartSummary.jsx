@@ -1,11 +1,8 @@
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import { useDispatch } from "react-redux";
-import { clearCart } from "@/redux/features/cartSlice";
 
 export default function CartSummary({ items }) {
   const router = useRouter();
-  const dispatch = useDispatch();
   const subtotal = items.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -45,7 +42,6 @@ export default function CartSummary({ items }) {
       <button
         onClick={() => {
           toast.success("Thank you for shopping ✨");
-          dispatch(clearCart());
           sessionStorage.setItem("justCheckedOut", "true");
           router.push("/thank-you");
         }}
