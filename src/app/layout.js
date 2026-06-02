@@ -19,7 +19,7 @@ export const metadata = {
   title: "BlushBerry",
   description: "Luxury beauty ecommerce experience",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon2.png",
   },
 };
 export default function RootLayout({ children }) {
