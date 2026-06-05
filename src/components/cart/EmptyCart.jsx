@@ -9,7 +9,7 @@ export default function EmptyCart() {
       </h2>
 
       <p className="text-muted-foreground mb-10">
-        Looks like you haven't added anything yet.
+        Looks like you have not added anything yet.
       </p>
 
       <Link

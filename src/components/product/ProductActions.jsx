@@ -11,11 +11,7 @@ import {
 export default function ProductActions({ product }) {
   const dispatch = useDispatch();
 
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const [mounted] = useState(() => typeof window !== "undefined");
 
   const cartItem = useSelector((state) =>
     state.cart.items.find((item) => item.id === product?.id)

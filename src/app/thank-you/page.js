@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { CheckCircle, ShoppingBag, ArrowRight } from 'lucide-react';
 import ThankYouGuard from '@/components/cart/ThankYouGuard';
+import OrderNumber from '@/components/cart/OrderNumber';
 
 export const metadata = {
   title: 'Thank You | BlushBerry',
@@ -8,9 +9,8 @@ export const metadata = {
 };
 
 export default function ThankYouPage() {
-  // Generate a random order number for display purposes
-  // In a real app, you would pass the actual order ID via props or search params
-  const orderNumber = Math.floor(100000 + Math.random() * 900000);
+  // Order number is generated on the client by `OrderNumber` to avoid
+  // impure Math.random() calls during server render.
 
   return (
     <ThankYouGuard>
@@ -39,9 +39,7 @@ export default function ThankYouPage() {
             <p className="text-sm text-muted-foreground mb-2 uppercase tracking-widest font-medium">
               Order number
             </p>
-            <p className="text-2xl font-mono text-foreground tracking-wider font-semibold">
-              #BLUSHBERRY-{orderNumber}
-            </p>
+            <OrderNumber />
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

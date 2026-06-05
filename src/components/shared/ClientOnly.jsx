@@ -6,16 +6,9 @@ export default function ClientOnly({
   children,
 }) {
 
-  const [mounted, setMounted] =
-    useState(false);
+  const [mounted] = useState(() => typeof window !== "undefined");
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   return children;
 }

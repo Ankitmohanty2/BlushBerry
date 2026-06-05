@@ -9,14 +9,8 @@ import CartSummary from "@/components/cart/CartSummary";
 export default function CartPage() {
   const cartItems = useSelector((state) => state.cart.items);
 
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  if (!mounted) {
-    return null;
-  }
+  const [mounted] = useState(() => typeof window !== "undefined");
+  if (!mounted) return null;
 
   return (
     <section className="pt-16 md:pt-20 pb-16 md:pb-20">

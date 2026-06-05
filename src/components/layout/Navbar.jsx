@@ -16,7 +16,7 @@ import Container from "./Container";
 
 export default function Navbar() {
   const [search, setSearch] = useState("");
-  const [mounted, setMounted] = useState(false);
+  const [mounted] = useState(() => typeof window !== "undefined");
   const router = useRouter();
 
   const pathname = usePathname();
@@ -28,9 +28,8 @@ export default function Navbar() {
     0
   );
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // mounted state is derived from window availability to avoid synchronous
+  // setState inside an effect which can trigger cascading renders.
 
   const navItems = [
     {
@@ -55,11 +54,6 @@ export default function Navbar() {
     router.push(`/shop?search=${search}`);
   };
 
-  useEffect(() => {
-    if (pathname !== "/") {
-      setSearch("");
-    }
-  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
