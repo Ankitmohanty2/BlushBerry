@@ -40,6 +40,7 @@ export default function CartSummary({ items }) {
 
       {/* CTA */}
       <button
+        type="button"
         onClick={() => {
           toast.success("Thank you for shopping ✨");
           sessionStorage.setItem("justCheckedOut", "true");

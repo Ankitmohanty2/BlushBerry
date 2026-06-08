@@ -256,6 +256,7 @@ export default function ProductList({initialSearch,initialCategory,}) {
           sortBy) && (
   
           <button
+            type="button"
             onClick={() => {
               setSearch("");
               setSelectedCategory("All");

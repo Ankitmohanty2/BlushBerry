@@ -141,7 +141,7 @@ export default function Navbar() {
             {/* MOBILE MENU */}
             <Sheet>
               <SheetTrigger asChild>
-                <button className="hover:text-primary transition cursor-pointer">
+                <button type="button" className="hover:text-primary transition cursor-pointer">
                   <Menu className="w-7 h-7" />
                 </button>
               </SheetTrigger>

@@ -45,6 +45,7 @@ export default function CartItem({ item }) {
           {/* QUANTITY */}
           <div className="flex items-center border border-border rounded-full overflow-hidden bg-[#faf7f5] w-fit">
             <button
+              type="button"
               onClick={() => dispatch(decreaseQuantity(item.id))}
               className="w-10 h-10 flex items-center justify-center hover:bg-background transition"
             >
@@ -56,6 +57,7 @@ export default function CartItem({ item }) {
             </span>
 
             <button
+              type="button"
               onClick={() => dispatch(increaseQuantity(item.id))}
               className="w-10 h-10 flex items-center justify-center hover:bg-background transition"
             >
@@ -65,6 +67,7 @@ export default function CartItem({ item }) {
 
           {/* REMOVE */}
           <button
+            type="button"
             onClick={() => dispatch(removeFromCart(item.id))}
             className="text-sm underline underline-offset-4 hover:text-primary transition text-left sm:text-right"
           >

@@ -21,7 +21,7 @@ export default function ProductActions({ product }) {
     <div className="space-y-5">
       {/* WAIT FOR CLIENT HYDRATION */}
       {!mounted ? (
-        <button className="w-full sm:w-auto min-w-[200px] bg-primary text-primary-foreground px-10 h-14 rounded-full font-medium opacity-90">
+        <button type="button" className="w-full sm:w-auto min-w-[200px] bg-primary text-primary-foreground px-10 h-14 rounded-full font-medium opacity-90">
           Add To Cart
         </button>
       ) : cartItem ? (
@@ -29,6 +29,7 @@ export default function ProductActions({ product }) {
           {/* QUANTITY */}
           <div className="flex items-center justify-between sm:justify-start border border-border rounded-full overflow-hidden bg-[#faf7f5] h-14 px-2">
             <button
+              type="button"
               onClick={() => dispatch(decreaseQuantity(product.id))}
               className="w-10 h-10 rounded-full hover:bg-background transition flex items-center justify-center text-lg cursor-pointer"
             >
@@ -40,6 +41,7 @@ export default function ProductActions({ product }) {
             </span>
 
             <button
+              type="button"
               onClick={() => dispatch(increaseQuantity(product.id))}
               className="w-10 h-10 rounded-full hover:bg-background transition flex items-center justify-center text-lg cursor-pointer"
             >
@@ -56,6 +58,7 @@ export default function ProductActions({ product }) {
         </div>
       ) : (
         <button
+          type="button"
           onClick={() => dispatch(addToCart(product))}
           className="w-full sm:w-auto min-w-[200px] bg-primary text-primary-foreground px-10 h-14 rounded-full font-medium hover:scale-[1.01] active:scale-[0.98] transition-all cursor-pointer shadow-sm"
         >

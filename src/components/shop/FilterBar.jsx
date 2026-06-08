@@ -13,6 +13,7 @@ export default function FilterBar({
 
         return (
           <button
+            type="button"
             key={category}
             onClick={() =>
               setSelectedCategory(category)

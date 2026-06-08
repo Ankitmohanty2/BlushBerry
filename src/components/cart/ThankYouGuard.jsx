@@ -1,13 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { clearCart } from "@/redux/features/cartSlice";
 
 export default function ThankYouGuard({ children }) {
-  const router = useRouter();
   const dispatch = useDispatch();
-  const [isAuthorized, setIsAuthorized] = useState(() => {
+  const [isAuthorized] = useState(() => {
     try {
       return typeof window !== "undefined" && !!sessionStorage.getItem("justCheckedOut");
     } catch (e) {
@@ -15,15 +14,16 @@ export default function ThankYouGuard({ children }) {
     }
   });
 
-  useEffect(() => {
-    if (!isAuthorized) {
-      router.replace("/cart");
-      return;
-    }
+  if (typeof window !== "undefined" && !isAuthorized) {
+    redirect("/cart");
+  }
 
-    sessionStorage.removeItem("justCheckedOut");
-    dispatch(clearCart());
-  }, [isAuthorized, router, dispatch]);
+  useEffect(() => {
+    if (isAuthorized) {
+      sessionStorage.removeItem("justCheckedOut");
+      dispatch(clearCart());
+    }
+  }, [isAuthorized, dispatch]);
 
   if (!isAuthorized) return null; 
 

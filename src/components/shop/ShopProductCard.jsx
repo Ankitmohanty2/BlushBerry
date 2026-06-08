@@ -61,6 +61,7 @@ export default function ShopProductCard({ product }) {
               {/* QUANTITY */}
               <div className="flex items-center border border-border rounded-full overflow-hidden cursor-pointer">
                 <button
+                  type="button"
                   onClick={() => dispatch(decreaseQuantity(product.id))}
                   className="w-10 h-10 cursor-pointer"
                 >
@@ -72,6 +73,7 @@ export default function ShopProductCard({ product }) {
                 </span>
 
                 <button
+                  type="button"
                   onClick={() => dispatch(increaseQuantity(product.id))}
                   className="w-10 h-10 cursor-pointer"
                 >
@@ -89,6 +91,7 @@ export default function ShopProductCard({ product }) {
             </div>
           ) : (
             <button
+              type="button"
               onClick={() => dispatch(addToCart(product))}
               className="w-full bg-primary text-primary-foreground px-5 h-10 rounded-full text-sm cursor-pointer"
             >

@@ -4,6 +4,20 @@ import Container from "@/components/layout/Container";
 import { getSingleProduct } from "@/services/products";
 import ProductActions from "@/components/product/ProductActions";
 
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const product = await getSingleProduct(resolvedParams.id);
+  
+  if (!product) {
+    return { title: "Product Not Found | BlushBerry" };
+  }
+
+  return {
+    title: `${product.name} | BlushBerry`,
+    description: product.description || `Buy ${product.name} from BlushBerry's premium collection.`,
+  };
+}
+
 export default async function ProductDetailsPage({ params }) {
   const resolvedParams = await params;
 
