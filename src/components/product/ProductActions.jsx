@@ -19,14 +19,12 @@ export default function ProductActions({ product }) {
 
   return (
     <div className="space-y-5">
-      {/* WAIT FOR CLIENT HYDRATION */}
       {!mounted ? (
         <button type="button" className="w-full sm:w-auto min-w-[200px] bg-primary text-primary-foreground px-10 h-14 rounded-full font-medium opacity-90">
           Add To Cart
         </button>
       ) : cartItem ? (
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-          {/* QUANTITY */}
           <div className="flex items-center justify-between sm:justify-start border border-border rounded-full overflow-hidden bg-[#faf7f5] h-14 px-2">
             <button
               type="button"
@@ -49,7 +47,6 @@ export default function ProductActions({ product }) {
             </button>
           </div>
 
-          {/* STATUS */}
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span className="w-2 h-2 rounded-full bg-green-500" />
 
@@ -66,7 +63,6 @@ export default function ProductActions({ product }) {
         </button>
       )}
 
-      {/* SHIPPING */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
         <span className="w-2 h-2 rounded-full bg-primary/70" />
 

@@ -8,7 +8,6 @@ export default function Loading() {
 
       <Container>
 
-        {/* HEADER */}
         <div className="mb-10 space-y-4">
 
           <div className="h-4 w-40 bg-accent rounded-full" />
@@ -17,7 +16,6 @@ export default function Loading() {
 
         </div>
 
-        {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-8">
 
           {Array.from({ length: 8 }).map(

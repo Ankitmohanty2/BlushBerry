@@ -10,10 +10,8 @@ export default function Loading() {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
 
-          {/* IMAGE */}
           <div className="h-[320px] sm:h-[460px] lg:h-[700px] rounded-[24px] md:rounded-[40px] bg-accent" />
 
-          {/* CONTENT */}
           <div className="space-y-6">
 
             <div className="h-4 w-32 bg-accent rounded-full" />

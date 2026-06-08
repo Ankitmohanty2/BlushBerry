@@ -7,25 +7,20 @@ export default function Hero() {
     <section className="relative overflow-hidden pt-12">
       <Container>
         <div className="grid lg:grid-cols-[1fr_0.85fr] gap-14 items-center">
-          {/* CONTENT */}
           <div className="max-w-[620px]">
-            {/* SUBTITLE */}
             <p className="uppercase tracking-[4px] text-xs md:text-sm text-muted-foreground mb-5">
               Luxury Beauty Collection
             </p>
 
-            {/* TITLE */}
             <h1 className="text-4xl sm:text-5xl lg:text-5xl leading-[1.05] tracking-tight font-semibold mb-6">
               Beauty crafted for modern elegance.
             </h1>
 
-            {/* DESCRIPTION */}
             <p className="text-base md:text-lg text-muted-foreground leading-7 md:leading-8 mb-8 max-w-[540px]">
               Discover premium makeup essentials designed to elevate your
               everyday ritual with timeless sophistication.
             </p>
 
-            {/* CTA */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
                 href="/shop"
@@ -43,7 +38,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* IMAGE */}
           <div className="relative">
             <div className="relative h-[420px] sm:h-[500px] lg:h-[620px] rounded-[32px] md:rounded-[48px] overflow-hidden bg-gradient-to-b from-[#f8f4f1] to-[#efe7e2] shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
               <Image

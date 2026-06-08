@@ -11,7 +11,6 @@ export default function CategoryCard({ category }) {
       }
       className="group block"
     >
-      {/* IMAGE */}
       <div className="relative h-[200px] sm:h-[260px] lg:h-[320px] overflow-hidden rounded-[28px]">
         <div className="absolute inset-0 bg-black/10 z-10" />
 
@@ -26,7 +25,6 @@ export default function CategoryCard({ category }) {
         />
       </div>
 
-      {/* CONTENT */}
       <div className="mt-4 flex items-center justify-between">
         <h3 className="text-lg sm:text-xl lg:text-2xl font-medium">
           {category.name}

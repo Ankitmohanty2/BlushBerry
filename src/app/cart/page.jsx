@@ -15,7 +15,6 @@ export default function CartPage() {
   return (
     <section className="pt-16 md:pt-20 pb-16 md:pb-20">
       <Container>
-        {/* HEADER */}
         <div className="mb-10 md:mb-14">
           <p className="uppercase tracking-[2px] md:tracking-[4px] text-sm text-muted-foreground mb-3">
             Shopping Cart
@@ -30,14 +29,12 @@ export default function CartPage() {
           <EmptyCart />
         ) : (
           <div className="grid xl:grid-cols-[1fr_380px] gap-8 xl:gap-12 items-start">
-            {/* ITEMS */}
             <div className="space-y-4 md:space-y-6">
               {cartItems.map((item) => (
                 <CartItem key={item.id} item={item} />
               ))}
             </div>
 
-            {/* SUMMARY */}
             <div className="xl:sticky xl:top-28">
               <CartSummary items={cartItems} />
             </div>

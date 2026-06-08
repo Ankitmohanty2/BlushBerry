@@ -194,7 +194,6 @@ export default function ProductList({initialSearch,initialCategory,}) {
 
     <Container>
   
-      {/* PAGE HEADER */}
       <div className="mb-10">
   
         <p className="uppercase tracking-[4px] text-xs md:text-sm text-muted-foreground mb-4">
@@ -207,16 +206,13 @@ export default function ProductList({initialSearch,initialCategory,}) {
   
       </div>
   
-      {/* TOP CONTROLS */}
       <div className="flex flex-col gap-6 mb-10">
   
-        {/* SEARCH */}
         <SearchBar
           search={search}
           setSearch={setSearch}
         />
   
-        {/* FILTERS + SORT */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
   
           <FilterBar
@@ -236,7 +232,6 @@ export default function ProductList({initialSearch,initialCategory,}) {
   
       </div>
   
-      {/* PRODUCT COUNT */}
       <div className="flex items-center justify-between mb-10 border-y border-border py-4">
   
         <p className="text-sm text-muted-foreground">
@@ -271,7 +266,6 @@ export default function ProductList({initialSearch,initialCategory,}) {
   
       </div>
   
-      {/* EMPTY STATE */}
       {filteredProducts.length === 0 ? (
   
         <div className="py-32 text-center">
@@ -306,7 +300,6 @@ export default function ProductList({initialSearch,initialCategory,}) {
   
       )}
   
-      {/* INFINITE SCROLL TRIGGER */}
       <div
         ref={loaderRef}
         className="h-20"

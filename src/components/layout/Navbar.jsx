@@ -59,7 +59,6 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <Container>
         <div className="flex items-center justify-between h-20">
-          {/* LOGO */}
           <Link
             href="/"
             className="logo-text text-3xl font-semibold tracking-wide"
@@ -67,7 +66,6 @@ export default function Navbar() {
             BlushBerry
           </Link>
 
-          {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -88,9 +86,7 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* DESKTOP ACTIONS */}
           <div className="hidden md:flex items-center gap-5">
-            {/* SEARCH */}
             {pathname === "/" && (
               <form
                 onSubmit={handleSearch}
@@ -110,7 +106,6 @@ export default function Navbar() {
               </form>
             )}
 
-            {/* CART */}
             <Link
               href="/cart"
               className="relative hover:text-primary transition-colors"
@@ -125,9 +120,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* MOBILE NAV */}
           <div className="flex md:hidden items-center gap-5">
-            {/* MOBILE CART */}
             <Link href="/cart" className="relative">
               <ShoppingBag className="w-6 h-6" />
 
@@ -138,7 +131,6 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* MOBILE MENU */}
             <Sheet>
               <SheetTrigger asChild>
                 <button type="button" className="hover:text-primary transition cursor-pointer">
@@ -151,7 +143,6 @@ export default function Navbar() {
                 className="w-[320px] border-l border-border/50 bg-[#fffaf7] pt-20 px-8"
               >
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                {/* SIDEBAR HEADER */}
                 <div className="mb-12">
                   <Link href="/" className="logo-text text-4xl font-semibold">
                     BlushBerry
@@ -162,7 +153,6 @@ export default function Navbar() {
                   </p>
                 </div>
 
-                {/* NAVIGATION */}
                 <nav className="flex flex-col gap-2">
                   {navItems.slice(0, 2).map((item) => {
                     const isActive = pathname === item.href;
@@ -190,7 +180,6 @@ export default function Navbar() {
                   })}
                 </nav>
 
-                {/* CART CTA */}
                 <div className="border-t border-border mt-10 pt-8">
                   <Link
                     href="/cart"

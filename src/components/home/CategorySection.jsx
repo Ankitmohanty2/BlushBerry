@@ -9,7 +9,6 @@ export default function CategorySection() {
 
       <Container>
 
-        {/* SECTION HEADER */}
         <div className="mb-12">
 
           <p className="uppercase tracking-[4px] text-sm text-muted-foreground mb-3">
@@ -22,7 +21,6 @@ export default function CategorySection() {
 
         </div>
 
-        {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {categories.map((category) => (

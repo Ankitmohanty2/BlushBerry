@@ -12,7 +12,6 @@ export default function CartItem({ item }) {
 
   return (
     <div className="flex flex-col sm:flex-row gap-5 border border-border rounded-[24px] md:rounded-[30px] p-4 md:p-5 bg-card">
-      {/* IMAGE */}
       <div className="relative w-full sm:w-[140px] h-[260px] sm:h-[160px] rounded-[20px] overflow-hidden bg-accent shrink-0">
         <Image
           src={item.imageURL}
@@ -23,26 +22,20 @@ export default function CartItem({ item }) {
         />
       </div>
 
-      {/* CONTENT */}
       <div className="flex-1 flex flex-col justify-between">
         <div>
-          {/* BRAND */}
           <p className="text-xs md:text-sm text-muted-foreground mb-2">
             {item.brand}
           </p>
 
-          {/* TITLE */}
           <h3 className="text-xl md:text-2xl font-medium mb-3 leading-tight">
             {item.name}
           </h3>
 
-          {/* PRICE */}
           <p className="text-lg md:text-xl font-semibold">${item.price}</p>
         </div>
 
-        {/* ACTIONS */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-6">
-          {/* QUANTITY */}
           <div className="flex items-center border border-border rounded-full overflow-hidden bg-[#faf7f5] w-fit">
             <button
               type="button"
@@ -65,7 +58,6 @@ export default function CartItem({ item }) {
             </button>
           </div>
 
-          {/* REMOVE */}
           <button
             type="button"
             onClick={() => dispatch(removeFromCart(item.id))}

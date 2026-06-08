@@ -11,7 +11,6 @@ export default function ProductCard({
       className="group block"
     >
 
-      {/* IMAGE */}
       <div className="relative h-[240px] sm:h-[300px] lg:h-[340px] overflow-hidden rounded-[22px] md:rounded-[30px] bg-accent">
 
         <Image
@@ -26,7 +25,6 @@ export default function ProductCard({
 
       </div>
 
-      {/* CONTENT */}
       <div className="mt-4">
 
         <p className="text-sm capitalize text-muted-foreground mb-2">
