@@ -28,6 +28,21 @@ export default function ProductList({initialSearch,initialCategory,}) {
   const [visibleCount, setVisibleCount] =
     useState(INITIAL_PRODUCTS);
 
+  const handleSearchChange = (value) => {
+    setSearch(value);
+    setVisibleCount(INITIAL_PRODUCTS);
+  };
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setVisibleCount(INITIAL_PRODUCTS);
+  };
+
+  const handleSortChange = (value) => {
+    setSortBy(value);
+    setVisibleCount(INITIAL_PRODUCTS);
+  };
+
   /*
     FETCH PRODUCTS
   */
@@ -136,16 +151,6 @@ export default function ProductList({initialSearch,initialCategory,}) {
   ]);
 
   /*
-    RESET VISIBLE PRODUCTS
-    WHEN FILTERS CHANGE
-  */
-  useEffect(() => {
-
-    setVisibleCount(INITIAL_PRODUCTS);
-
-  }, [filteredProducts]);
-
-  /*
     INFINITE SCROLL
   */
   useEffect(() => {
@@ -210,7 +215,7 @@ export default function ProductList({initialSearch,initialCategory,}) {
   
         <SearchBar
           search={search}
-          setSearch={setSearch}
+          setSearch={handleSearchChange}
         />
   
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
@@ -219,13 +224,13 @@ export default function ProductList({initialSearch,initialCategory,}) {
             categories={categories}
             selectedCategory={selectedCategory}
             setSelectedCategory={
-              setSelectedCategory
+              handleCategoryChange
             }
           />
   
           <SortDropdown
             sortBy={sortBy}
-            setSortBy={setSortBy}
+            setSortBy={handleSortChange}
           />
   
         </div>
@@ -256,6 +261,7 @@ export default function ProductList({initialSearch,initialCategory,}) {
               setSearch("");
               setSelectedCategory("All");
               setSortBy("");
+              setVisibleCount(INITIAL_PRODUCTS);
             }}
             className="text-sm underline underline-offset-4 hover:text-primary transition"
           >
